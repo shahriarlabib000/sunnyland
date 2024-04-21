@@ -7,6 +7,7 @@ signal dead
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var dearhTscn=preload("res://scenes/death/death.tscn")
 var alive=true
+var win=false
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -35,7 +36,7 @@ func _physics_process(delta):
 
 
 func update_animations(input_axis):
-	if alive:
+	if alive && !win:
 		if input_axis != 0:
 			animated_sprite_2d.flip_h = input_axis < 0
 			animated_sprite_2d.play("run")
@@ -52,4 +53,8 @@ func death():
 	emit_signal("dead")
 	alive=false
 	animated_sprite_2d.play("death")
+
+func won():
+	win=true
+	animated_sprite_2d.play("crouch")
 	

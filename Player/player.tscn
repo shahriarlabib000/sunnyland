@@ -160,6 +160,6 @@ shape = SubResource("RectangleShape2D_ok28f")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -6)
 sprite_frames = SubResource("SpriteFrames_f4wda")
-animation = &"death"
+animation = &"crouch"
 autoplay = "idle"
-frame_progress = 0.0332742
+frame_progress = 0.273207

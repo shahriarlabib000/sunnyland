@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var cam=$Player/Camera2D
 @onready var ui=$Player/Camera2D/ui
+@onready var player=$Player
 @onready var deathTSCN=preload("res://scenes/death/death.tscn")
 @onready var winTscn=preload("res://scenes/win/win.tscn")
 # Called when the node enters the scene tree for the first time.
@@ -23,3 +24,4 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		ui.visible=false
 		cam.add_child(winTscn.instantiate())
+		player.won()
