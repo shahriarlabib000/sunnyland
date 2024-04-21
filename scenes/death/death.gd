@@ -1,0 +1,18 @@
+extends CanvasLayer
+
+
+@onready var cheery=preload("res://Pickups/Cheery/cherry.gd")
+@onready var gem=preload("res://Pickups/Gem/gem.gd")
+@onready var cherrylabel=$VBoxContainer/HBoxContainer/cherry
+@onready var gemLabel=$VBoxContainer/HBoxContainer2/gem
+
+func _ready() -> void:
+	gemLabel.text=str(gem.collected)+"/4"
+	cherrylabel.text=str(cheery.collected)+"/18"
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("reload"):
+		gem.collected=0
+		cheery.collected=0
+		get_tree().reload_current_scene()
+	
