@@ -12,8 +12,8 @@ config_version=5
 
 config/name="SunnyLand"
 run/main_scene="res://World/world.tscn"
-config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
+config/features=PackedStringArray("4.4", "Forward Plus")
+config/icon="res://sunnyIcon.png"
 
 [display]
 
@@ -40,3 +40,4 @@ reload={
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_s3tc_bptc=true
